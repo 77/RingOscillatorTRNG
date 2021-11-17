@@ -1,0 +1,9 @@
+trng/trng.cache/
+trng/trng.gen/
+trng/trng.ip_user_files/
+trng/trng.runs/
+trng/trng.sim/
+*.xci
+*.bda
+*.ui
+*.lpr

@@ -1,0 +1,406 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x267C91F5B6867347",
+      "device": "xc7z020clg400-1",
+      "gen_directory": "../../../../trng.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2020.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "ring_oscillator_0": "",
+      "ring_oscillator_1": "",
+      "sampler_0": "",
+      "controller_0": "",
+      "fsm_0": "",
+      "shift_register_0": "",
+      "sseg_des_0": "",
+      "xlconstant_logic_1": ""
+    },
+    "ports": {
+      "CLK_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "BTNC_0",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "design_1_CLK_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "BTNC_0": {
+        "direction": "I"
+      },
+      "SEGMENTS_0": {
+        "direction": "O",
+        "left": "6",
+        "right": "0"
+      },
+      "DISP_EN_0": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "LED_0": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "ring_oscillator_0": {
+        "vlnv": "xilinx.com:module_ref:ring_oscillator:1.0",
+        "xci_name": "design_1_ring_oscillator_0_0",
+        "xci_path": "ip\\design_1_ring_oscillator_0_0\\design_1_ring_oscillator_0_0.xci",
+        "inst_hier_path": "ring_oscillator_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ring_oscillator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "output": {
+            "direction": "O"
+          }
+        }
+      },
+      "ring_oscillator_1": {
+        "vlnv": "xilinx.com:module_ref:ring_oscillator:1.0",
+        "xci_name": "design_1_ring_oscillator_1_0",
+        "xci_path": "ip\\design_1_ring_oscillator_1_0\\design_1_ring_oscillator_1_0.xci",
+        "inst_hier_path": "ring_oscillator_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ring_oscillator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "output": {
+            "direction": "O"
+          }
+        }
+      },
+      "sampler_0": {
+        "vlnv": "xilinx.com:module_ref:sampler:1.0",
+        "xci_name": "design_1_sampler_0_0",
+        "xci_path": "ip\\design_1_sampler_0_0\\design_1_sampler_0_0.xci",
+        "inst_hier_path": "sampler_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "sampler",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk0": {
+            "direction": "I"
+          },
+          "clk1": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "enable": {
+            "direction": "I"
+          },
+          "readAck": {
+            "direction": "I"
+          },
+          "sample": {
+            "direction": "O"
+          },
+          "bitReady": {
+            "direction": "O"
+          },
+          "randOut": {
+            "direction": "O"
+          }
+        }
+      },
+      "controller_0": {
+        "vlnv": "xilinx.com:module_ref:controller:1.0",
+        "xci_name": "design_1_controller_0_0",
+        "xci_path": "ip\\design_1_controller_0_0\\design_1_controller_0_0.xci",
+        "inst_hier_path": "controller_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "controller",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_CLK_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "sample": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "enable": {
+            "direction": "O"
+          }
+        }
+      },
+      "fsm_0": {
+        "vlnv": "xilinx.com:module_ref:fsm:1.0",
+        "xci_name": "design_1_fsm_0_0",
+        "xci_path": "ip\\design_1_fsm_0_0\\design_1_fsm_0_0.xci",
+        "inst_hier_path": "fsm_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "fsm",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_CLK_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "bitReady": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "readAck": {
+            "direction": "O"
+          },
+          "done": {
+            "direction": "O"
+          },
+          "push": {
+            "direction": "O"
+          }
+        }
+      },
+      "shift_register_0": {
+        "vlnv": "xilinx.com:module_ref:shift_register:1.0",
+        "xci_name": "design_1_shift_register_0_0",
+        "xci_path": "ip\\design_1_shift_register_0_0\\design_1_shift_register_0_0.xci",
+        "inst_hier_path": "shift_register_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "shift_register",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "design_1_CLK_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "input": {
+            "direction": "I"
+          },
+          "push": {
+            "direction": "I"
+          },
+          "output": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          }
+        }
+      },
+      "sseg_des_0": {
+        "vlnv": "xilinx.com:module_ref:sseg_des:1.0",
+        "xci_name": "design_1_sseg_des_0_0",
+        "xci_path": "ip\\design_1_sseg_des_0_0\\design_1_sseg_des_0_0.xci",
+        "inst_hier_path": "sseg_des_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "sseg_des",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "COUNT": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "design_1_CLK_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "VALID": {
+            "direction": "I"
+          },
+          "DISP_EN": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "SEGMENTS": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
+      },
+      "xlconstant_logic_1": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "design_1_xlconstant_0_0",
+        "xci_path": "ip\\design_1_xlconstant_0_0\\design_1_xlconstant_0_0.xci",
+        "inst_hier_path": "xlconstant_logic_1"
+      }
+    },
+    "nets": {
+      "ring_oscillator_0_output": {
+        "ports": [
+          "ring_oscillator_0/output",
+          "sampler_0/clk0"
+        ]
+      },
+      "ring_oscillator_1_output": {
+        "ports": [
+          "ring_oscillator_1/output",
+          "sampler_0/clk1"
+        ]
+      },
+      "BTNC_0_1": {
+        "ports": [
+          "BTNC_0",
+          "fsm_0/reset"
+        ]
+      },
+      "controller_0_reset": {
+        "ports": [
+          "controller_0/reset",
+          "sampler_0/reset"
+        ]
+      },
+      "fsm_0_done": {
+        "ports": [
+          "fsm_0/done",
+          "LED_0"
+        ]
+      },
+      "sseg_des_0_DISP_EN": {
+        "ports": [
+          "sseg_des_0/DISP_EN",
+          "DISP_EN_0"
+        ]
+      },
+      "sseg_des_0_SEGMENTS": {
+        "ports": [
+          "sseg_des_0/SEGMENTS",
+          "SEGMENTS_0"
+        ]
+      },
+      "sampler_0_sample": {
+        "ports": [
+          "sampler_0/sample",
+          "controller_0/sample"
+        ]
+      },
+      "sampler_0_bitReady": {
+        "ports": [
+          "sampler_0/bitReady",
+          "fsm_0/bitReady"
+        ]
+      },
+      "CLK_0_1": {
+        "ports": [
+          "CLK_0",
+          "fsm_0/clk",
+          "shift_register_0/clk",
+          "sseg_des_0/CLK",
+          "controller_0/clk"
+        ]
+      },
+      "shift_register_0_output": {
+        "ports": [
+          "shift_register_0/output",
+          "sseg_des_0/COUNT"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_logic_1/dout",
+          "sseg_des_0/VALID"
+        ]
+      },
+      "fsm_0_push": {
+        "ports": [
+          "fsm_0/push",
+          "shift_register_0/push"
+        ]
+      },
+      "sampler_0_randOut": {
+        "ports": [
+          "sampler_0/randOut",
+          "shift_register_0/input"
+        ]
+      },
+      "controller_0_enable": {
+        "ports": [
+          "controller_0/enable",
+          "sampler_0/enable"
+        ]
+      },
+      "fsm_0_readAck": {
+        "ports": [
+          "fsm_0/readAck",
+          "sampler_0/readAck"
+        ]
+      }
+    }
+  }
+}
